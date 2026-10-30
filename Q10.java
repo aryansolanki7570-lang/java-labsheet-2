@@ -1,23 +1,27 @@
+
 import java.util.Scanner;
 
-class Greatest {
+class LeapYearRange {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter first number: ");
-        int a = sc.nextInt();
+        System.out.print("Enter year: ");
+        int year = sc.nextInt();
 
-        System.out.print("Enter second number: ");
-        int b = sc.nextInt();
+        System.out.print("Enter starting range: ");
+        int start = sc.nextInt();
 
-        if (a > b) {
-            System.out.println(a + " is greatest");
-        } else if (b > a) {
-            System.out.println(b + " is greatest");
+        System.out.print("Enter ending range: ");
+        int end = sc.nextInt();
+
+        if (start <= end && year >= start && year <= end &&
+                (year % 400 == 0 ||
+                        (year % 4 == 0 && year % 100 != 0))) {
+            System.out.println("Leap Year and Within Range");
         } else {
-            System.out.println("Both numbers are equal");
+            System.out.println("Not a Leap Year within the Range");
         }
-    }
-}{
 
+        sc.close();
+    }
 }
